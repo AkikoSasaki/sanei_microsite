@@ -1,3 +1,4 @@
+import MagazineLinksSection from "@/components/MagazineLinksSection"
 import Link from "next/link"
 import Image from "next/image"
 import { ChevronRight, ShoppingCart, Gift, User, Menu } from "lucide-react"
@@ -162,6 +163,7 @@ export default function Home() {
               </div>
             </div>
             <MagazineSection />
+            <MagazineLinksSection />
 
             {/* 千代勝正ブログセクション */}
             <div className="mt-12">
