@@ -1,0 +1,176 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+
+    --card: 0 0% 98%;
+    --card-foreground: 240 10% 3.9%;
+
+    --popover: 0 0% 98%;
+    --popover-foreground: 240 10% 3.9%;
+
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 5.9% 10%;
+
+    --radius: 0.5rem;
+  }
+
+  .dark {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+
+    --card: 240 10% 4%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 240 10% 4%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 72% 51%;
+    --primary-foreground: 0 0% 100%;
+
+    --secondary: 240 4% 16%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 240 4% 16%;
+    --muted-foreground: 240 5% 65%;
+
+    --accent: 240 4% 16%;
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 240 4% 16%;
+    --input: 240 4% 16%;
+    --ring: 240 5% 65%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-noto-sans-jp), var(--font-inter), sans-serif;
+  }
+
+  .dark body {
+    background: linear-gradient(to bottom, #000000, #121212);
+  }
+
+  body {
+    background: linear-gradient(to bottom, #f8f8f8, #ffffff);
+  }
+
+  /* スムーズスクロール */
+  html {
+    scroll-behavior: smooth;
+  }
+}
+
+@layer components {
+  .gradient-card {
+    @apply dark:bg-gradient-to-br dark:from-zinc-800/50 dark:to-zinc-900/80 dark:border-zinc-800/50
+           bg-gradient-to-br from-white to-zinc-100 border-zinc-200/80
+           shadow-sm;
+  }
+
+  .gradient-card:hover {
+    @apply dark:bg-gradient-to-br dark:from-zinc-800/70 dark:to-zinc-900/90 dark:border-zinc-700/50
+           bg-gradient-to-br from-white to-zinc-50 border-zinc-300/80
+           shadow-md;
+  }
+
+  .gradient-red {
+    @apply dark:bg-gradient-to-r dark:from-red-600 dark:to-red-500
+           bg-gradient-to-r from-red-500 to-red-400;
+  }
+
+  .gradient-blue {
+    @apply dark:bg-gradient-to-r dark:from-blue-600 dark:to-blue-500
+           bg-gradient-to-r from-blue-500 to-blue-400;
+  }
+
+  .gradient-header {
+    @apply dark:bg-gradient-to-b dark:from-black/95 dark:to-black/80 dark:border-zinc-800/30
+           bg-gradient-to-b from-white/95 to-white/80 border-zinc-200/30
+           backdrop-blur-md;
+  }
+
+  .gradient-footer {
+    @apply dark:bg-gradient-to-t dark:from-black dark:to-zinc-900
+           bg-gradient-to-t from-zinc-100 to-white;
+  }
+
+  .gradient-section {
+    @apply dark:bg-gradient-to-br dark:from-zinc-800/50 dark:to-zinc-900/50 dark:border-zinc-800/50
+           bg-gradient-to-br from-white to-zinc-100/80 border-zinc-200/50;
+  }
+
+  .font-script {
+    font-family: cursive, "Brush Script MT", "Comic Sans MS", sans-serif;
+  }
+
+  /* アニメーション用クラス */
+  .animate-fade-in {
+    animation: fadeIn 1s ease-in-out forwards;
+  }
+
+  .animate-slide-up {
+    animation: slideUp 0.8s ease-out forwards;
+  }
+
+  .animate-scale {
+    animation: scale 6s ease-out forwards;
+  }
+
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  @keyframes slideUp {
+    from {
+      transform: translateY(30px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+
+  @keyframes scale {
+    from {
+      transform: scale(1.1);
+    }
+    to {
+      transform: scale(1);
+    }
+  }
+}
