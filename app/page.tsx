@@ -120,15 +120,22 @@ export default function Home() {
           </section>
 
           {/* 最新情報セクション */}
-          <section id="news" className="pt-8">
-            <div className="flex items-center justify-between mb-6">
-              <h2 className="text-2xl font-bold tracking-tight">最新情報</h2>
-              <Button variant="link" className="text-red-500 hover:text-red-400">
-                すべて見る <ChevronRight className="h-4 w-4 ml-1" />
-              </Button>
-            </div>
-            <NewsSection />
-          </section>
+          <section id="news" className="pt-8 px-4 sm:px-6">
+  <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6 gap-4 sm:gap-0">
+    <h2 className="text-xl sm:text-2xl font-bold tracking-tight text-center sm:text-left">
+      最新情報
+    </h2>
+    <Button
+      variant="link"
+      className="text-red-500 hover:text-red-400 text-sm sm:text-base mx-auto sm:mx-0"
+    >
+      すべて見る <ChevronRight className="h-4 w-4 ml-1" />
+    </Button>
+  </div>
+
+  <NewsSection />
+</section>
+
 
           {/* デイリーゲームセクション */}
           <section id="game" className="pt-8">
