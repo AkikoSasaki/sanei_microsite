@@ -4,7 +4,6 @@ import Image from "next/image"
 import { ChevronRight, ShoppingCart, Gift, User, Menu } from "lucide-react"
 
 import { Button } from "@/components/ui/button"
-import HeroBanner from "@/components/hero-banner"
 import EventInfoCard from "@/components/event-info-card"
 import MagazineSection from "@/components/magazine-section"
 import LanguageToggle from "@/components/language-toggle"
@@ -103,9 +102,31 @@ export default function Home() {
       {/* メインコンテンツ */}
       <main>
         {/* ヒーローバナー */}
-        <section className="w-full">
-          <HeroBanner />
-        </section>
+        <section className="relative w-full h-[90vh] overflow-hidden">
+  <Image
+    src="/images/chiyo_image.jpg" // パスに注意！画像が public/images にある場合
+    alt="千代勝正"
+    fill
+    priority
+    className="object-cover"
+  />
+  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/40 to-transparent" />
+  <div className="absolute inset-0 flex flex-col justify-center items-center text-center text-white px-4">
+    <span className="bg-red-600 text-white px-4 py-1 text-sm font-medium rounded-sm mb-4">
+      先行販売開始
+    </span>
+    <h1 className="text-4xl md:text-6xl font-bold leading-tight">世界最大級<br />東京オートサロン2026</h1>
+    <p className="text-lg md:text-xl mt-4 max-w-xl">
+      プレミア特典付きチケットがついに登場！
+    </p>
+    <Link href="#partners">
+      <Button size="lg" className="bg-red-600 hover:bg-red-700 text-white mt-6">
+        詳細を見る
+      </Button>
+    </Link>
+  </div>
+</section>
+
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-16">
           {/* イベント情報カード */}
